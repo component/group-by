@@ -1,0 +1,17 @@
+{
+  "name": "group-by",
+  "version": "0.0.1",
+  "description": "Group an array by property values or callback",
+  "dependencies": {
+    "to-function": "*"
+  },
+  "devDependencies": {
+    "mocha": "*",
+    "should": "*"
+  },
+  "component": {
+    "scripts": {
+      "group-by/index.js": "index.js"
+    }
+  }
+}
