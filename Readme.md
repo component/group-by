@@ -1,4 +1,3 @@
-
 # group-by
 
   Group an array of values by property or callback function.
@@ -52,6 +51,6 @@ groupBy(users, function(user){
 })
 ```
 
-# License
+## License
 
   MIT
