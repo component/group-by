@@ -21,7 +21,6 @@ describe('groupBy(arr, prop)', function(){
 describe('groupBy(arr, prop1, prop2)', function(){
   it('should group by multiple properties', function () {
     var ret = groupBy(nodes, 'type', 'version');
-    console.log(ret)
     Object.keys(ret.log).should.have.length(3);
     ret.log['1.0.0'].should.have.length(1);
     ret.app['1.1.0'].should.have.length(1);
