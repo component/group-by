@@ -51,6 +51,28 @@ groupBy(users, function(user){
 })
 ```
 
+### groupBy(array, [prop1, prop2])
+### groupBy(array, prop1, prop2)
+### groupBy(array, [fn1, fn2])
+### groupBy(array, fn1, fn2)
+
+  Also groups by multiple keys
+
+```js
+groupBy(nodes, 'type', 'version');
+```
+
+yields:
+
+```js
+{ log: 
+   { '1.0.0': [ { type: 'log', version: '1.0.0' } ],
+     '1.1.0': [ { type: 'log', version: '1.1.0' } ],
+     '1.3.0': [ { type: 'log', version: '1.3.0' } ] },
+  app: { '1.0.0': [ { type: 'app', version: '1.0.0' } ],
+         '1.1.0': [ { type: 'app', version: '1.1.0' } ] } }
+```
+
 ## License
 
   MIT

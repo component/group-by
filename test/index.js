@@ -18,6 +18,25 @@ describe('groupBy(arr, prop)', function(){
   })
 })
 
+describe('groupBy(arr, prop1, prop2)', function(){
+  it('should group by multiple properties', function () {
+    var ret = groupBy(nodes, 'type', 'version');
+    console.log(ret)
+    Object.keys(ret.log).should.have.length(3);
+    ret.log['1.0.0'].should.have.length(1);
+    ret.app['1.1.0'].should.have.length(1);
+  })
+})
+
+describe('groupBy(arr, [prop1, prop2])', function(){
+  it('should group by multiple properties', function () {
+    var ret = groupBy(nodes, ['type', 'version']);
+    Object.keys(ret.log).should.have.length(3);
+    ret.log['1.0.0'].should.have.length(1);
+    ret.app['1.1.0'].should.have.length(1);
+  })
+})
+
 describe('groupBy(arr, fn)', function(){
   it('should group by the returned property', function(){
     var ret = groupBy(nodes, function(node){
@@ -29,3 +48,30 @@ describe('groupBy(arr, fn)', function(){
     ret['1.3.0'].should.have.length(1);
   })
 })
+
+describe('groupBy(arr, fn1, fn2)', function(){
+  it('should group by the returned properties', function () {
+    var ret = groupBy(nodes, function(node){
+      return node.type;
+    }, function(node){
+      return node.version;
+    });
+    Object.keys(ret.log).should.have.length(3);
+    ret.log['1.0.0'].should.have.length(1);
+    ret.app['1.1.0'].should.have.length(1);
+  })
+})
+
+describe('groupBy(arr, [fn1, fn2])', function(){
+  it('should group by the returned properties', function () {
+    var ret = groupBy(nodes, function(node){
+      return node.type;
+    }, function(node){
+      return node.version;
+    });
+    Object.keys(ret.log).should.have.length(3);
+    ret.log['1.0.0'].should.have.length(1);
+    ret.app['1.1.0'].should.have.length(1);
+  })
+})
+
