@@ -13,5 +13,9 @@
     "scripts": {
       "group-by/index.js": "index.js"
     }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/component/group-by.git"
   }
 }
